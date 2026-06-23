@@ -1,5 +1,5 @@
 import type { HttpClient } from "./client";
-import type { Page, Media, Paginated, QueryOptions } from "./types";
+import type { Media, Page, Paginated, QueryOptions } from "./types";
 
 const DEFAULT_DEPTH = 2;
 

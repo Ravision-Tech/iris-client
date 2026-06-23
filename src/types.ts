@@ -1,4 +1,4 @@
-import type { Page, Media, Property } from "./payload-types";
+import type { Media, Page, Property } from "./payload-types";
 
 export type { Page, Media, Property };
 

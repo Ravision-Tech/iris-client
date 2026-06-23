@@ -7,7 +7,11 @@ content without touching anything Payload-specific.
 ## Install
 
 ```bash
+npm install @ravisiontech/iris
+# or
 pnpm add @ravisiontech/iris
+# or
+yarn add @ravisiontech/iris
 ```
 
 ## Usage
@@ -59,13 +63,13 @@ function render(page: Page) {
 
 ## API
 
-| Method | Returns |
-| --- | --- |
-| `iris.pages.list(opts?)` | `Paginated<Page>` |
-| `iris.pages.bySlug(slug, opts?)` | `Page \| null` |
-| `iris.pages.byId(id, opts?)` | `Page` |
-| `iris.media.byId(id, opts?)` | `Media` |
-| `iris.raw.get(path, params?)` | raw JSON (escape hatch) |
+| Method                           | Returns                 |
+| -------------------------------- | ----------------------- |
+| `iris.pages.list(opts?)`         | `Paginated<Page>`       |
+| `iris.pages.bySlug(slug, opts?)` | `Page \| null`          |
+| `iris.pages.byId(id, opts?)`     | `Page`                  |
+| `iris.media.byId(id, opts?)`     | `Media`                 |
+| `iris.raw.get(path, params?)`    | raw JSON (escape hatch) |
 
 `opts` accepts `depth`, `limit`, `page`, `sort`, `where`, and `draft`. Failed requests
 throw an `IrisError` carrying the response `status` and `body`.

@@ -20,7 +20,7 @@ export class IrisError extends Error {
   constructor(
     message: string,
     readonly status: number,
-    readonly body: unknown,
+    readonly body: unknown
   ) {
     super(message);
     this.name = "IrisError";
