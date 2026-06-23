@@ -1,0 +1,32 @@
+{
+  "name": "@ravisiontech/iris",
+  "version": "0.0.1",
+  "description": "Typed client for the Iris headless content API.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist"],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "sync:types": "mkdir -p src && awk '/^declare module/{exit} {print}' ../Iris/src/payload-types.ts > src/payload-types.ts",
+    "prepublishOnly": "pnpm build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": { "node": ">=18" },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  }
+}
