@@ -1,7 +1,23 @@
 {
   "name": "@ravisiontech/iris-client",
   "version": "0.0.1",
-  "description": "Typed client for the Iris headless content API.",
+  "description": "Typed client for reading content from the Iris platform.",
+  "keywords": [
+    "iris",
+    "cms",
+    "content",
+    "headless",
+    "client",
+    "sdk"
+  ],
+  "homepage": "https://github.com/Ravision-Tech/iris-client#readme",
+  "bugs": "https://github.com/Ravision-Tech/iris-client/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ravision-Tech/iris-client.git"
+  },
+  "license": "MIT",
+  "author": "Ravision Tech LLC",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
