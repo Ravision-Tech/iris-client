@@ -3,6 +3,4 @@ dist
 coverage
 pnpm-lock.yaml
 package-lock.json
-
-# Generated from the Iris schema (do not format)
 src/schema.ts

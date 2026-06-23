@@ -27,8 +27,11 @@ export class IrisError extends Error {
   }
 }
 
-// Encodes params into the nested bracket query format the Iris API expects, e.g.
-// { where: { slug: { equals: "home" } }, depth: 2 } -> where[slug][equals]=home&depth=2
+/** Encodes params into the nested bracket query format the Iris API expects, e.g.
+ *
+ * { where: { slug: { equals: "home" } }, depth: 2 } -> where[slug][equals]=home&depth=2
+ *
+ */
 function encodeQuery(params: Record<string, unknown>): string {
   const parts: string[] = [];
 

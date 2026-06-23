@@ -76,7 +76,7 @@ throw an `IrisError` carrying the response `status` and `body`.
 
 ## Types
 
-Every type you need ships with the package — import `Page`, `Media`, and the block unions
+Every type you need ships with the package. Import `Page`, `Media`, and the block unions
 (`PageBlock`, `BlockOfType`) directly:
 
 ```ts
