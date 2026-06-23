@@ -1,4 +1,4 @@
-# @ravisiontech/iris
+# @ravisiontech/iris-client
 
 The official client for reading your content from the [Iris](https://iris.ravisiontech.com)
 platform. Iris is where your site's content is managed and edited; this package lets your
@@ -7,17 +7,17 @@ site fetch that content and render it however you like, with full TypeScript typ
 ## Install
 
 ```bash
-npm install @ravisiontech/iris
+npm install @ravisiontech/iris-client
 # or
-pnpm add @ravisiontech/iris
+pnpm add @ravisiontech/iris-client
 # or
-yarn add @ravisiontech/iris
+yarn add @ravisiontech/iris-client
 ```
 
 ## Usage
 
 ```ts
-import { createIris } from "@ravisiontech/iris";
+import { createIris } from "@ravisiontech/iris-client";
 
 const iris = createIris({ apiKey: process.env.IRIS_KEY! });
 
@@ -37,13 +37,13 @@ const iris = createIris({
 Requests are scoped to the property the API key belongs to, so `pages.list()` only ever
 returns that property's pages.
 
-## Rendering content
+## Rendering Content
 
 A page's `content` is an array of blocks, each discriminated by `blockType`. Use
 `getBlocks` to iterate and narrow each block to its concrete shape:
 
 ```ts
-import { getBlocks, type Page } from "@ravisiontech/iris";
+import { getBlocks, type Page } from "@ravisiontech/iris-client";
 
 function render(page: Page) {
   return getBlocks(page).map((block) => {
@@ -80,7 +80,7 @@ Every type you need ships with the package. Import `Page`, `Media`, and the bloc
 (`PageBlock`, `BlockOfType`) directly:
 
 ```ts
-import type { Media, Page, PageBlock } from "@ravisiontech/iris";
+import type { Media, Page, PageBlock } from "@ravisiontech/iris-client";
 ```
 
 They always reflect the content types set up in your Iris platform, so your editor

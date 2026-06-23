@@ -1,5 +1,5 @@
 {
-  "name": "@ravisiontech/iris",
+  "name": "@ravisiontech/iris-client",
   "version": "0.0.1",
   "description": "Typed client for the Iris headless content API.",
   "type": "module",
