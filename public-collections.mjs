@@ -1,7 +1,6 @@
-// Single source of truth for which Iris collections the package exposes.
+// Single source of truth for which Iris collections this package exposes.
 //
 // The type sync (scripts/sync-types.mjs) extracts exactly these interfaces from
-// the Iris schema, and the publish guard (scripts/check-dist.mjs) allows exactly
-// these as public type exports. To expose a new collection, add it here (and
-// give it a resource in src/resources.ts) — there is nowhere else to update.
+// the Iris schema and bundles their types. To expose another collection, add it
+// here and give it a resource in src/resources.ts.
 export const PUBLIC_COLLECTIONS = ["Property", "Page", "Media"];

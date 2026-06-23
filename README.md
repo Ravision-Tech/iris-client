@@ -1,8 +1,8 @@
 # @ravisiontech/iris
 
-Typed client for the [Iris](https://iris.ravisiontech.com) content API. Iris is a
-headless, multi-tenant CMS; this package gives a site a small, type-safe way to read its
-content without touching anything Payload-specific.
+The official client for reading your content from the [Iris](https://iris.ravisiontech.com)
+platform. Iris is where your site's content is managed and edited; this package lets your
+site fetch that content and render it however you like, with full TypeScript types.
 
 ## Install
 
@@ -76,5 +76,12 @@ throw an `IrisError` carrying the response `status` and `body`.
 
 ## Types
 
-The exported types (`Page`, `Media`, block unions) are generated from the Iris schema and
-kept in sync with `pnpm sync:types`. Don't edit `src/payload-types.ts` by hand.
+Every type you need ships with the package — import `Page`, `Media`, and the block unions
+(`PageBlock`, `BlockOfType`) directly:
+
+```ts
+import type { Media, Page, PageBlock } from "@ravisiontech/iris";
+```
+
+They always reflect the content types set up in your Iris platform, so your editor
+autocompletes real fields and flags typos before you ship.

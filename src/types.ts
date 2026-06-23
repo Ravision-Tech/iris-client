@@ -1,4 +1,4 @@
-import type { Media, Page, Property } from "./payload-types";
+import type { Media, Page, Property } from "./schema";
 
 export type { Page, Media, Property };
 
@@ -50,7 +50,7 @@ export interface QueryOptions {
   page?: number;
   /** Sort field; prefix with `-` for descending, e.g. `"-createdAt"`. */
   sort?: string;
-  /** Extra Payload `where` filters, merged with any the method sets itself. */
+  /** Additional `where` filters to narrow results, merged with any the method sets itself. */
   where?: Record<string, unknown>;
   /** Whether to include draft versions. */
   draft?: boolean;

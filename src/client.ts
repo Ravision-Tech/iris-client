@@ -9,7 +9,7 @@ export interface IrisClientOptions {
    * `http://localhost:3000` when developing against a local Iris.
    */
   baseUrl?: string;
-  /** Auth collection the API key belongs to. Defaults to `"users"`. */
+  /** Advanced: the account type an API key is issued for. Defaults to `"users"` and rarely needs changing. */
   collection?: string;
   /** Custom `fetch` implementation. Defaults to the global `fetch`. */
   fetch?: typeof fetch;
@@ -27,7 +27,7 @@ export class IrisError extends Error {
   }
 }
 
-// Serialises params into Payload's bracket notation, e.g.
+// Encodes params into the nested bracket query format the Iris API expects, e.g.
 // { where: { slug: { equals: "home" } }, depth: 2 } -> where[slug][equals]=home&depth=2
 function encodeQuery(params: Record<string, unknown>): string {
   const parts: string[] = [];
@@ -69,12 +69,12 @@ export class HttpClient {
   }
 
   /**
-   * Sends a GET request to the Iris REST API and returns the parsed JSON body.
+   * Sends a GET request to the Iris API and returns the parsed JSON body.
    * Prefer the typed `pages` and `media` helpers; reach for this only for
    * endpoints they don't yet cover.
    *
    * @param path Path beneath `/api`, e.g. `"/pages"`.
-   * @param params Query parameters, encoded in Payload's bracket notation.
+   * @param params Query parameters, encoded in the Iris API's bracket notation.
    * @throws {IrisError} When the response status is not 2xx.
    */
   async get<T>(path: string, params: Record<string, unknown> = {}): Promise<T> {

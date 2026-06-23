@@ -5,4 +5,4 @@ pnpm-lock.yaml
 package-lock.json
 
 # Generated from the Iris schema (do not format)
-src/payload-types.ts
+src/schema.ts

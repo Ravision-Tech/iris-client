@@ -60,6 +60,6 @@ export default [
     },
   },
   {
-    ignores: ["node_modules", "dist", "src/payload-types.ts"],
+    ignores: ["node_modules", "dist", "src/schema.ts"],
   },
 ];

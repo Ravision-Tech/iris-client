@@ -2,15 +2,15 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 
 import { PUBLIC_COLLECTIONS } from "../public-collections.mjs";
 
-// Pulls the generated types from the Iris backend, keeping only the public
-// collections (see public-collections.mjs). Page and Media reference Property
-// and nothing else, so this set is the full public closure — internal
-// collections (users, email queue, activity log, etc.) never reach the
-// published package or this repo.
+// Pulls the generated content types from the Iris backend, keeping only the
+// public collections (see ../public-collections.mjs). Page and Media reference
+// Property and nothing else, so this is the full public set — every other
+// (non-public) part of the schema is left out and never reaches the published
+// package or this repo.
 const PUBLIC_INTERFACES = new Set(PUBLIC_COLLECTIONS);
 
 const source = new URL("../../Iris/src/payload-types.ts", import.meta.url);
-const output = new URL("../src/payload-types.ts", import.meta.url);
+const output = new URL("../src/schema.ts", import.meta.url);
 
 const header = ["/* eslint-disable */"];
 
